@@ -17,7 +17,7 @@ function getTextElementValueById(elementId) {
   const textElement = document.getElementById(elementId);
   const textElementValueString = textElement.innerText;
   const textElementValue = parseFloat(textElementValueString);
-  console.log(textElementValue)
+  // console.log(textElementValue)
   return textElementValue;
 }
 
