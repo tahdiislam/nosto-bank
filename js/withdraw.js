@@ -12,11 +12,16 @@
 document.getElementById("btn-withdraw").addEventListener("click", function () {
   // console.log('withdraws btn clicked')
   try{
-    const newWithdrawAmount = getInputFieldValueById("withdraw-field");
+  const newWithdrawAmount = getInputFieldValueById("withdraw-field");
   const previousWithdrawTotal = getTextElementValueById("withdraw-total");
+  const previousBalanceTotal = getTextElementValueById("balance-total");
+  // validation check 
+  if(newWithdrawAmount > previousBalanceTotal){
+    alert('You dont have enough balance, please type a valid amount!!');
+    return;
+  }
   const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
   setTextElementValueById("withdraw-total", newWithdrawTotal);
-  const previousBalanceTotal = getTextElementValueById("balance-total");
   const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
   setTextElementValueById("balance-total", newBalanceTotal);
   }catch(error){

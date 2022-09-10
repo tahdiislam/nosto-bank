@@ -5,7 +5,7 @@ function getInputFieldValueById(inputFieldId) {
   // console.log(inputFieldValue);
   inputField.value = "";
   // check validation
-  if (isNaN(inputFieldValue) || inputFieldValue < 0){
+  if (isNaN(inputFieldValue) || inputFieldValue <= 0){
     alert('Please type a valid amount')
     return 0;
   }else{
