@@ -1,16 +1,24 @@
 function getInputFieldValueById(inputFieldId) {
   const inputField = document.getElementById(inputFieldId);
-  inputField.value = "";
   const inputFieldValueString = inputField.value;
   const inputFieldValue = parseFloat(inputFieldValueString);
-  return inputFieldValue;
+  // console.log(inputFieldValue);
+  inputField.value = "";
+  // check validation
+  if (isNaN(inputFieldValue) || inputFieldValue < 0){
+    alert('Please type a valid amount')
+    return 0;
+  }else{
+    return inputFieldValue;
+  }
 }
 
 function getTextElementValueById(elementId) {
   const textElement = document.getElementById(elementId);
   const textElementValueString = textElement.innerText;
-  const textElementValue = textElementValueString;
-  textElementValue;
+  const textElementValue = parseFloat(textElementValueString);
+  console.log(textElementValue)
+  return textElementValue;
 }
 
 function setTextElementValueById(elementId, newValue) {
